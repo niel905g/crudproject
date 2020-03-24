@@ -4,6 +4,7 @@ import "./App.css";
 import User from "./User";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import UserForm from './UserForm';
+
 class App extends Component {
   render() {
     return (
@@ -11,6 +12,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Switch>
+              <Route path="/edit/:id" component={UserForm} />
               <Route path="/add" component={UserForm} />
               <Route exact path="/" component={User} />
               <Route path="/*" component={NotFound} />
